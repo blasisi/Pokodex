@@ -1,29 +1,21 @@
 import React from "react";
-const App = () => (
-  <div>
-    <Logo />
-    <BestPokemon />
-  </div>
-);
-const Logo = () => {
-  const appName = "MyaPokodex";
+import Logo from "./Logo";
+import BestPokemon from "./BestPokemon";
+import CaughtPokemon from "./CaughtPokemon";
+import Logo from "./Logo";
 
+  const abilities = ["Anticipation", "Adaptability", "Run-Away"];
+  const date = new Date().toLocaleDateString();
+const App = () => {
+  const logWhenClicked = () => {
+    console.log("heyy I'm Pidgie");
+  };
   return (
-  <header>
-    <h1>Welcome to Pokedex {appName}
-    </h1>
-    <img
-      src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
-      alt="bird"
-    ></img>
-  </header>
+    <div>
+      <Logo appName="Pokedex" handleClick={logWhenClicked} />
+      <BestPokemon abilities={abilities} />
+      <CaughtPokemon date={date}/>
+    </div>
   );
 };
-
-function BestPokemon(){
-  const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];
-}
-
-const BestPokemon = () => <p>My favorite Pokemon is pikachu</p>;
-
 export default App;
